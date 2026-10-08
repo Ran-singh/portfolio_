@@ -1,0 +1,1571 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Portfolio</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+            rel="stylesheet"
+        />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <style>
+            :root {
+                --surface: #e8eaf0;
+                --primary: #6366f1;
+                --primary-container: #818cf8;
+                --on-primary-container: #e0e2ff;
+                --tertiary: #7c3aed;
+                --text: #2e3040;
+                --text-light: #585a68;
+                --container: #e2e4ea;
+                --container-low: #e5e7ed;
+                --outline: #d0d2dc;
+                --sh-xs: 3px 3px 6px rgba(0, 0, 0, 0.05), -3px -3px 6px rgba(255, 255, 255, 0.6);
+                --sh-sm: 4px 4px 8px rgba(0, 0, 0, 0.08), -4px -4px 8px rgba(255, 255, 255, 0.6);
+                --sh-md: 6px 6px 12px rgba(0, 0, 0, 0.08), -6px -6px 12px rgba(255, 255, 255, 0.7);
+                --sh-lg: 8px 8px 16px rgba(0, 0, 0, 0.08), -8px -8px 16px rgba(255, 255, 255, 0.7);
+                --sh-xl: 10px 10px 20px rgba(0, 0, 0, 0.08), -10px -10px 20px rgba(255, 255, 255, 0.7);
+                --in-sm: inset 2px 2px 4px rgba(0, 0, 0, 0.06), inset -2px -2px 4px rgba(255, 255, 255, 0.6);
+                --in-field: inset 3px 3px 6px rgba(0, 0, 0, 0.06), inset -3px -3px 6px rgba(255, 255, 255, 0.6);
+                --in-md: inset 4px 4px 8px rgba(0, 0, 0, 0.08), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+                --press: inset 4px 4px 8px rgba(0, 0, 0, 0.06), inset -4px -4px 8px rgba(255, 255, 255, 0.5);
+            }
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+                background: var(--surface);
+                color: var(--text);
+                overscroll-behavior: none;
+            }
+            ::-webkit-scrollbar {
+                display: none;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            .material-symbols-outlined {
+                font-size: 18px;
+                vertical-align: middle;
+            }
+            .container {
+                max-width: 1280px;
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+            @media (min-width: 992px) {
+                .container {
+                    padding-left: 3rem;
+                    padding-right: 3rem;
+                }
+            }
+            .section {
+                padding: 6rem 0;
+            }
+            .bg-low {
+                background: var(--container-low);
+            }
+            .text-muted2 {
+                color: var(--text-light);
+            }
+            .text-primary2 {
+                color: var(--primary);
+            }
+            .text-tertiary2 {
+                color: var(--tertiary);
+            }
+            .eyebrow {
+                font-size: 0.75rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                margin-bottom: 0.75rem;
+            }
+            .sec-title {
+                font-size: 2.25rem;
+                font-weight: 700;
+                margin-bottom: 1rem;
+            }
+            @media (min-width: 576px) {
+                .sec-title {
+                    font-size: 2.25rem;
+                }
+            }
+            .neo-xs {
+                box-shadow: var(--sh-xs);
+            }
+            .neo-sm {
+                box-shadow: var(--sh-sm);
+            }
+            .neo {
+                box-shadow: var(--sh-md);
+            }
+            .neo-lg {
+                box-shadow: var(--sh-lg);
+            }
+            .neo-xl {
+                box-shadow: var(--sh-xl);
+            }
+            .card-neo {
+                background: var(--surface);
+                border-radius: 1.5rem;
+                padding: 2rem;
+                box-shadow: var(--sh-lg);
+            }
+            .img-box {
+                border-radius: 1.5rem;
+                overflow: hidden;
+                box-shadow: var(--in-md);
+            }
+            .img-box img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .site-header {
+                background: rgba(232, 234, 240, 0.8);
+                backdrop-filter: blur(24px);
+                box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+            }
+            .site-header .bar {
+                height: 80px;
+            }
+            .logo {
+                font-size: 1.25rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                text-transform: uppercase;
+                color: var(--text);
+                text-decoration: none;
+            }
+            .logo-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 1.5rem;
+                background: var(--primary);
+                color: #fff;
+            }
+            .logo-icon .material-symbols-outlined {
+                color: #fff;
+            }
+            .nav-link2 {
+                font-size: 0.875rem;
+                color: var(--text-light);
+                text-decoration: none;
+                padding: 0.5rem 0.75rem;
+                border-radius: 1.5rem;
+                transition: 0.2s;
+            }
+            .nav-link2:hover {
+                color: var(--text);
+            }
+            .nav-link2.active {
+                background: var(--primary);
+                color: #fff;
+                font-weight: 600;
+            }
+            .user-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: var(--primary);
+            }
+            .user-icon .material-symbols-outlined {
+                color: #fff;
+            }
+            main {
+                padding-top: 80px;
+            }
+            .btn-main,
+            .btn-soft {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                border: 0;
+                border-radius: 1.5rem;
+                font-weight: 600;
+                font-size: 0.875rem;
+                text-decoration: none;
+                transition: 0.2s;
+                box-shadow: var(--sh-md);
+            }
+            .btn-main {
+                background: var(--primary);
+                color: #fff;
+            }
+            .btn-main:hover {
+                background: var(--primary-container);
+                color: var(--on-primary-container);
+            }
+            .btn-soft {
+                background: var(--surface);
+                color: var(--text);
+            }
+            .btn-soft:hover {
+                background: var(--container);
+                color: var(--text);
+            }
+            .btn-main:active,
+            .btn-soft:active {
+                box-shadow: var(--press);
+            }
+            .btn-lg2 {
+                padding: 1rem 2rem;
+            }
+            .btn-md2 {
+                padding: 0.625rem 1.25rem;
+                box-shadow: var(--sh-sm);
+            }
+            .btn-md2:active {
+                box-shadow: var(--press);
+            }
+            .hero {
+                padding: 4rem 0 6rem;
+            }
+            @media (min-width: 992px) {
+                .hero {
+                    padding: 6rem 0 8rem;
+                }
+            }
+            .badge-neo {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.5rem 1rem;
+                border-radius: 50rem;
+                background: var(--surface);
+                color: var(--primary);
+                font-size: 0.75rem;
+                font-weight: 600;
+                letter-spacing: 0.05em;
+                text-transform: uppercase;
+            }
+            .hero h1 {
+                font-size: 2.25rem;
+                font-weight: 700;
+                letter-spacing: -0.025em;
+                line-height: 1.1;
+            }
+            @media (min-width: 576px) {
+                .hero h1 {
+                    font-size: 3.75rem;
+                }
+            }
+            .hero p.lead2 {
+                font-size: 1.125rem;
+                color: var(--text-light);
+                max-width: 36rem;
+                line-height: 1.7;
+            }
+            .stat-num {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+            .stat-label {
+                font-size: 0.75rem;
+                color: var(--text-light);
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                font-weight: 500;
+            }
+            .stat-line {
+                width: 1px;
+                height: 40px;
+                background: var(--outline);
+                opacity: 0.4;
+            }
+            .hero-visual {
+                position: relative;
+                width: 100%;
+                max-width: 28rem;
+                aspect-ratio: 1;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .float-card {
+                position: absolute;
+                padding: 1.5rem;
+                border-radius: 1.5rem;
+                background: var(--surface);
+                box-shadow:
+                    10px 10px 20px rgba(0, 0, 0, 0.08),
+                    -10px -10px 20px rgba(255, 255, 255, 0.7);
+            }
+            .float-1 {
+                top: 1rem;
+                left: 0;
+                width: 16rem;
+                z-index: 20;
+                animation: bounce 1s infinite;
+            }
+            .float-2 {
+                bottom: 1.5rem;
+                right: 0;
+                width: 18rem;
+                z-index: 30;
+            }
+            @keyframes bounce {
+                0%,
+                100% {
+                    transform: translateY(-25%);
+                    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+                }
+                50% {
+                    transform: none;
+                    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+                }
+            }
+            .mini-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .bg-p20 {
+                background: rgba(99, 102, 241, 0.2);
+                color: var(--primary);
+            }
+            .bg-t20 {
+                background: rgba(124, 58, 237, 0.2);
+                color: var(--tertiary);
+            }
+            .mini-bar {
+                height: 8px;
+                border-radius: 50rem;
+                background: var(--container);
+                overflow: hidden;
+            }
+            .mini-bar div {
+                height: 100%;
+                width: 90%;
+                background: var(--primary);
+                border-radius: 50rem;
+            }
+            .code-box {
+                font-family: monospace;
+                font-size: 11px;
+                padding: 0.75rem;
+                border-radius: 1rem;
+                background: var(--container);
+                color: var(--text-light);
+                box-shadow:
+                    inset 3px 3px 6px rgba(0, 0, 0, 0.04),
+                    inset -3px -3px 6px rgba(255, 255, 255, 0.5);
+            }
+            .circle-outer {
+                width: 18rem;
+                height: 18rem;
+                border-radius: 50%;
+                background: var(--surface);
+                padding: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow:
+                    inset 12px 12px 24px rgba(0, 0, 0, 0.06),
+                    inset -12px -12px 24px rgba(255, 255, 255, 0.6);
+            }
+            .circle-inner {
+                width: 12rem;
+                height: 12rem;
+                border-radius: 50%;
+                overflow: hidden;
+                background: var(--surface);
+                box-shadow:
+                    8px 8px 16px rgba(0, 0, 0, 0.08),
+                    -8px -8px 16px rgba(255, 255, 255, 0.8);
+            }
+            .circle-inner img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .icon-box {
+                width: 48px;
+                height: 48px;
+                border-radius: 1.5rem;
+                color: #fff;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: var(--sh-sm);
+            }
+            .icon-box .material-symbols-outlined {
+                font-size: 24px;
+                color: #fff;
+            }
+            .tag {
+                display: inline-block;
+                padding: 0.375rem 0.75rem;
+                border-radius: 1rem;
+                background: var(--container);
+                font-size: 0.75rem;
+                font-weight: 600;
+                box-shadow: var(--sh-xs);
+            }
+            .tag-sm {
+                display: inline-block;
+                padding: 0.25rem 0.625rem;
+                border-radius: 0.375rem;
+                background: var(--container);
+                font-size: 11px;
+                font-weight: 600;
+            }
+            .skill {
+                margin-bottom: 1.25rem;
+            }
+            .skill-head {
+                display: flex;
+                justify-content: space-between;
+                font-size: 0.875rem;
+                font-weight: 600;
+                margin-bottom: 0.5rem;
+            }
+            .track {
+                height: 12px;
+                border-radius: 50rem;
+                background: var(--container);
+                padding: 2px;
+                box-shadow: var(--in-sm);
+            }
+            .fill {
+                height: 100%;
+                border-radius: 50rem;
+                background: var(--primary);
+            }
+            .tert .fill {
+                background: var(--tertiary);
+            }
+            .tert .skill-head span:last-child {
+                color: var(--tertiary);
+            }
+            .pri .skill-head span:last-child {
+                color: var(--primary);
+            }
+            .work-card {
+                background: var(--surface);
+                border-radius: 1.5rem;
+                padding: 1.5rem;
+                box-shadow: var(--sh-md);
+                cursor: pointer;
+                transition: 0.3s;
+                height: 100%;
+            }
+            .work-card:hover {
+                transform: translateY(-4px);
+            }
+            .work-card .img-box {
+                height: 14rem;
+            }
+            .work-card img {
+                transition: transform 0.5s;
+            }
+            .work-card:hover img {
+                transform: scale(1.05);
+            }
+            .cat {
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0.25rem 0.75rem;
+                border-radius: 1rem;
+                background: var(--container);
+                color: var(--primary);
+            }
+            .clamp2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            .web-card .img-box {
+                height: 16rem;
+            }
+            .cta-pill {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.375rem 1rem;
+                border-radius: 50rem;
+                background: var(--container);
+                color: var(--primary);
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            .info-box {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 1rem;
+                border-radius: 1.5rem;
+                background: var(--surface);
+                box-shadow: var(--sh-md);
+                margin-bottom: 1.5rem;
+            }
+            .info-icon {
+                width: 48px;
+                height: 48px;
+                border-radius: 1.5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .info-icon .material-symbols-outlined {
+                font-size: 20px;
+            }
+            .form-label2 {
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+                margin-bottom: 0.5rem;
+                display: block;
+            }
+            .field {
+                width: 100%;
+                padding: 0.875rem 1rem;
+                border: 0;
+                border-radius: 1.5rem;
+                background: var(--surface);
+                color: var(--text);
+                font-size: 0.875rem;
+                outline: none;
+                box-shadow: var(--in-field);
+            }
+            .field:focus {
+                box-shadow:
+                    var(--in-field),
+                    0 0 0 2px var(--primary);
+            }
+            #toast {
+                position: fixed;
+                bottom: 2rem;
+                right: 2rem;
+                z-index: 50;
+                padding: 1rem 1.5rem;
+                border-radius: 1.5rem;
+                background: var(--surface);
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                box-shadow:
+                    8px 8px 16px rgba(0, 0, 0, 0.12),
+                    -8px -8px 16px rgba(255, 255, 255, 0.8);
+                transform: translateY(8rem);
+                transition: transform 0.3s;
+            }
+            #toast.show {
+                transform: translateY(0);
+            }
+            .toast-icon {
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: var(--primary);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .toast-icon .material-symbols-outlined {
+                color: #fff;
+            }
+            #project-modal {
+                position: fixed;
+                inset: 0;
+                z-index: 60;
+                background: rgba(0, 0, 0, 0.4);
+                backdrop-filter: blur(4px);
+                display: none;
+                align-items: center;
+                justify-content: center;
+                padding: 1.5rem;
+            }
+            #project-modal.open {
+                display: flex;
+            }
+            .modal-box {
+                background: var(--surface);
+                border-radius: 1.5rem;
+                max-width: 42rem;
+                width: 100%;
+                padding: 2rem;
+                position: relative;
+                max-height: 90vh;
+                overflow-y: auto;
+                box-shadow:
+                    12px 12px 24px rgba(0, 0, 0, 0.15),
+                    -12px -12px 24px rgba(255, 255, 255, 0.8);
+            }
+            .modal-close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                width: 40px;
+                height: 40px;
+                border: 0;
+                border-radius: 50%;
+                background: var(--surface);
+                color: var(--text);
+                box-shadow: var(--sh-sm);
+            }
+            .modal-close:hover {
+                color: var(--primary);
+            }
+            .modal-box h4 {
+                font-size: 0.875rem;
+                font-weight: 700;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+            footer {
+                background: var(--container-low);
+                padding: 4rem 0;
+            }
+            footer ul {
+                list-style: none;
+                padding: 0;
+                font-size: 0.875rem;
+                color: var(--text-light);
+            }
+            footer li {
+                margin-bottom: 0.5rem;
+            }
+            footer a {
+                color: var(--text-light);
+                text-decoration: none;
+                transition: 0.2s;
+            }
+            footer a:hover {
+                color: var(--text);
+            }
+            .foot-title {
+                font-weight: 600;
+                font-size: 0.875rem;
+                margin-bottom: 1rem;
+            }
+            .foot-bottom {
+                border-top: 1px solid var(--outline);
+                padding-top: 2rem;
+                font-size: 0.875rem;
+                color: var(--text-light);
+            }
+            /* Responsive layout and mobile navigation */
+            body {
+                min-width: 320px;
+                overflow-x: hidden;
+            }
+            [id] {
+                scroll-margin-top: 6rem;
+            }
+            .menu-toggle {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                padding: 0;
+                border: 0;
+                border-radius: 50%;
+                background: var(--surface);
+                color: var(--text);
+                box-shadow: var(--sh-sm);
+            }
+            .mobile-nav {
+                display: none;
+                padding-top: 0.25rem;
+                padding-bottom: 1rem;
+                border-top: 1px solid rgba(208, 210, 220, 0.7);
+            }
+            .mobile-nav.open {
+                display: grid;
+                gap: 0.25rem;
+            }
+            .mobile-nav .nav-link2 {
+                display: block;
+                padding: 0.75rem 1rem;
+            }
+            @media (max-width: 991.98px) {
+                .site-header .bar {
+                    height: 72px;
+                }
+                main {
+                    padding-top: 72px;
+                }
+                .hero {
+                    padding: 3rem 0 4.5rem;
+                }
+                .hero h1 {
+                    font-size: clamp(2.25rem, 6.5vw, 3.75rem);
+                }
+                .hero-visual {
+                    max-width: 25rem;
+                }
+                .float-1 {
+                    width: min(16rem, 84%);
+                }
+                .float-2 {
+                    width: min(18rem, 88%);
+                }
+                .circle-outer {
+                    width: min(18rem, 72vw);
+                    height: auto;
+                    aspect-ratio: 1;
+                }
+                .circle-inner {
+                    width: 70%;
+                    height: 70%;
+                }
+            }
+            @media (max-width: 575.98px) {
+                .container {
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                .site-header .bar {
+                    min-height: 72px;
+                }
+                .logo {
+                    font-size: 1.05rem;
+                }
+                .site-header .bar > .d-flex:last-child {
+                    gap: 0.5rem !important;
+                }
+                .user-icon {
+                    width: 30px;
+                    height: 30px;
+                }
+                .hero {
+                    padding: 2.5rem 0 4rem;
+                }
+                .hero .row {
+                    --bs-gutter-y: 2rem;
+                }
+                .hero h1 {
+                    font-size: clamp(2rem, 8.5vw, 3rem);
+                    line-height: 1.12;
+                }
+                .hero p.lead2 {
+                    font-size: 1rem;
+                }
+                .hero .btn-lg2 {
+                    padding: 0.875rem 1rem;
+                    font-size: 0.8rem;
+                }
+                .hero-stats {
+                    display: grid !important;
+                    grid-template-columns: repeat(3, minmax(0, 1fr));
+                    gap: 0.75rem !important;
+                }
+                .hero-stats .stat-line {
+                    display: none;
+                }
+                .stat-num {
+                    font-size: 1.125rem;
+                }
+                .stat-label {
+                    font-size: 0.625rem;
+                    line-height: 1.4;
+                }
+                .hero-visual {
+                    max-width: 23rem;
+                }
+                .float-card {
+                    padding: clamp(0.85rem, 4vw, 1.25rem);
+                }
+                .float-1 {
+                    top: 0.75rem;
+                }
+                .float-2 {
+                    bottom: 0.75rem;
+                }
+                .circle-outer {
+                    width: min(18rem, 72vw);
+                    padding: 1.1rem;
+                }
+                .section {
+                    padding: 4rem 0;
+                }
+                .sec-title {
+                    font-size: clamp(1.8rem, 7vw, 2.25rem);
+                }
+                .card-neo {
+                    padding: 1.5rem;
+                }
+                #toast {
+                    left: 1rem;
+                    right: 1rem;
+                    bottom: 1rem;
+                    padding: 0.875rem 1rem;
+                }
+                #project-modal {
+                    padding: 0.75rem;
+                }
+                .modal-box {
+                    max-height: calc(100dvh - 1.5rem);
+                    padding: 3.5rem 1.25rem 1.25rem;
+                }
+                .modal-close {
+                    top: 0.75rem;
+                    right: 0.75rem;
+                }
+                .modal-box .btn-md2 {
+                    padding: 0.625rem 0.75rem !important;
+                    font-size: 0.75rem;
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                html {
+                    scroll-behavior: auto;
+                }
+                .float-1 {
+                    animation: none;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <header class="site-header fixed-top">
+            <div class="container bar d-flex align-items-center justify-content-between">
+                <a class="logo d-flex align-items-center gap-2" href="#"
+                    ><span class="logo-icon d-flex align-items-center justify-content-center"
+                        ><span class="material-symbols-outlined">bolt</span></span
+                    >Ran singh</a
+                >
+                <nav class="d-none d-lg-flex align-items-center gap-3">
+                    <a class="nav-link2 active" href="#">Home</a><a class="nav-link2" href="#about">About</a
+                    ><a class="nav-link2" href="#skills">Skills</a
+                    ><a class="nav-link2" href="#graphic-design">Graphic Design</a
+                    ><a class="nav-link2" href="#web-development">Web Development</a
+                    ><a class="nav-link2" href="#contact">Contact</a>
+                </nav>
+                <div class="d-flex align-items-center gap-3">
+                    <a
+                        class="btn-main btn-lg2 d-none d-sm-inline-flex"
+                        style="padding: 0.625rem 1.25rem; font-weight: 500"
+                        href="#contact"
+                        >Let's Work Together</a
+                    >
+                    <button class="menu-toggle d-lg-none" type="button" aria-expanded="false" aria-controls="mobileNav" aria-label="Open navigation menu">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <div class="user-icon d-flex align-items-center justify-content-center">
+                        <span class="material-symbols-outlined">person</span>
+                    </div>
+                </div>
+            </div>
+            <nav class="mobile-nav container d-lg-none" id="mobileNav" aria-label="Mobile navigation">
+                <a class="nav-link2 active" href="#top">Home</a>
+                <a class="nav-link2" href="#about">About</a>
+                <a class="nav-link2" href="#skills">Skills</a>
+                <a class="nav-link2" href="#graphic-design">Graphic Design</a>
+                <a class="nav-link2" href="#web-development">Web Development</a>
+                <a class="nav-link2" href="#contact">Contact</a>
+            </nav>
+        </header>
+        <main>
+            <section class="container hero" id="top">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-7">
+                        <div class="badge-neo neo mb-4">
+                            <span class="material-symbols-outlined" style="font-size: 16px">bolt</span> Graphic Designer
+                            • Web Developer
+                        </div>
+                        <h1 class="mb-4">
+                            Designing Ideas.<br /><span class="text-primary2">Building Experiences.</span>
+                        </h1>
+                        <p class="lead2 mb-4">
+                            I am a passionate Graphic Designer and Web Developer from Lucknow, India. I create creative
+                            designs and responsive websites using modern design and web technologies.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3 mb-4">
+                            <a class="btn-main btn-lg2" href="#web-development"
+                                >View My Work <span class="material-symbols-outlined">arrow_forward</span></a
+                            ><a
+                                class="btn-soft btn-lg2"
+                                href="https://drive.google.com/file/d/1QzWp-F4fUboSKwvDZhHRQa-hgL21nGk9/view?usp=sharing"
+                                >Download Resume <span class="material-symbols-outlined">download</span></a
+                            >
+                        </div>
+                        <div class="hero-stats d-flex align-items-center gap-4 pt-2">
+                            <div>
+                                <div class="stat-num">10+</div>
+                                <div class="stat-label">Projects Built</div>
+                            </div>
+                            <div class="stat-line"></div>
+                            <div>
+                                <div class="stat-num">Fresh</div>
+                                <div class="stat-label">Perspective &amp; Energy</div>
+                            </div>
+                            <div class="stat-line"></div>
+                            <div>
+                                <div class="stat-num">100%</div>
+                                <div class="stat-label">Passion &amp; Dedication</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="hero-visual">
+                            <div class="float-card float-1">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="mini-icon bg-p20">
+                                        <span class="material-symbols-outlined">palette</span>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.75rem; font-weight: 600">UI / Graphic Design</div>
+                                        <div style="font-size: 10px; color: var(--text-light)">
+                                            Photoshop &amp; Illustrator
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mini-bar"><div></div></div>
+                            </div>
+                            <div class="float-card float-2">
+                                <div class="d-flex align-items-center gap-3 mb-3">
+                                    <div class="mini-icon bg-t20">
+                                        <span class="material-symbols-outlined">code</span>
+                                    </div>
+                                    <div>
+                                        <div style="font-size: 0.75rem; font-weight: 600">Full Stack Dev</div>
+                                        <div style="font-size: 10px; color: var(--text-light)">
+                                            HTML, JS, PHP &amp; MySQL
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="code-box">&lt;code&gt;build_future();&lt;/code&gt;</div>
+                            </div>
+                            <div class="circle-outer">
+                                <div class="circle-inner">
+                                    <img alt="Profile" src="./img/coder.jpg" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section bg-low" id="about">
+                <div class="container">
+                    <div class="mb-5" style="max-width: 48rem">
+                        <div class="eyebrow text-primary2">Who I Am</div>
+                        <h2 class="sec-title">About Me</h2>
+                        <p class="text-muted2 fs-5" style="line-height: 1.7">
+                            I’m Ran Singh, a passionate Graphic Designer and Web Developer based in Lucknow, India. I
+                            enjoy creating creative designs and responsive websites that are modern, simple, and
+                            user-friendly.<br /><br />I have skills in Photoshop, Illustrator, Canva, InDesign, Figma,
+                            HTML, CSS, JavaScript, Bootstrap, PHP, MySQL, and WordPress. I am continuously learning and
+                            improving my skills to build creative digital experiences.<br /><br />I am looking for
+                            opportunities where I can apply my skills, learn from real-world projects, and grow as a
+                            designer and developer.
+                        </p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <div class="card-neo h-100">
+                                <div class="icon-box mb-4" style="background: var(--primary)">
+                                    <span class="material-symbols-outlined">design_services</span>
+                                </div>
+                                <h3 class="fs-2 fw-bold mb-3">Graphic Design</h3>
+                                <p class="text-muted2 small mb-4">
+                                    Creating creative and engaging designs for brands, social media, posters, packaging,
+                                    and visual communication with a focus on clean and professional design.
+                                </p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tag">Branding</span><span class="tag">Poster Design</span
+                                    ><span class="tag">Social Media Design</span
+                                    ><span class="tag">Packaging Design</span><span class="tag">Photo Manipulation</span
+                                    ><span class="tag">Figma</span><span class="tag">Mockup Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card-neo h-100">
+                                <div class="icon-box mb-4" style="background: var(--tertiary)">
+                                    <span class="material-symbols-outlined">terminal</span>
+                                </div>
+                                <h3 class="fs-2 fw-bold mb-3">Web Development</h3>
+                                <p class="text-muted2 small mb-4">
+                                    Building responsive and user-friendly websites using modern web technologies, with a
+                                    focus on clean design, functionality, and smooth user experience.
+                                </p>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span class="tag">HTML5 &amp; CSS3</span><span class="tag">JavaScript (ES6+)</span
+                                    ><span class="tag">Bootstrap</span><span class="tag">PHP</span
+                                    ><span class="tag">MySQL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section container" id="skills">
+                <div class="text-center mx-auto mb-5" style="max-width: 42rem">
+                    <div class="eyebrow text-primary2">Expertise</div>
+                    <h2 class="sec-title">Skills &amp; Proficiency</h2>
+                    <p class="text-muted2">
+                        A transparent breakdown of my technical and creative toolset acquired through rigorous practice
+                        and project building.
+                    </p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-lg-6">
+                        <div class="card-neo pri h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="mini-icon bg-p20" style="width: 40px; height: 40px">
+                                    <span class="material-symbols-outlined">brush</span>
+                                </div>
+                                <h3 class="fs-4 fw-bold m-0">Graphic Design Suite</h3>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>Adobe Photoshop</span><span>90%</span></div>
+                                <div class="track"><div class="fill" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>Adobe Illustrator</span><span>85%</span></div>
+                                <div class="track"><div class="fill" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>Canva Pro</span><span>95%</span></div>
+                                <div class="track"><div class="fill" style="width: 95%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>Adobe InDesign</span><span>80%</span></div>
+                                <div class="track"><div class="fill" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>CorelDRAW</span><span>82%</span></div>
+                                <div class="track"><div class="fill" style="width: 82%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-neo tert h-100">
+                            <div class="d-flex align-items-center gap-3 mb-4">
+                                <div class="mini-icon bg-t20" style="width: 40px; height: 40px">
+                                    <span class="material-symbols-outlined">code</span>
+                                </div>
+                                <h3 class="fs-4 fw-bold m-0">Web Development FullStack</h3>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>HTML5 &amp; CSS3</span><span>92%</span></div>
+                                <div class="track"><div class="fill" style="width: 92%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>JavaScript (ES6+)</span><span>85%</span></div>
+                                <div class="track"><div class="fill" style="width: 85%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>Bootstrap &amp; Tailwind</span><span>90%</span></div>
+                                <div class="track"><div class="fill" style="width: 90%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>PHP (Backend Fundamentals)</span><span>80%</span></div>
+                                <div class="track"><div class="fill" style="width: 80%"></div></div>
+                            </div>
+                            <div class="skill">
+                                <div class="skill-head"><span>MySQL Databases</span><span>78%</span></div>
+                                <div class="track"><div class="fill" style="width: 78%"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section bg-low" id="graphic-design">
+                <div class="container">
+                    <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5">
+                        <div>
+                            <div class="eyebrow text-primary2">Portfolio</div>
+                            <h2 class="sec-title m-0">Creative Design Works</h2>
+                        </div>
+                        <p class="text-muted2 small mt-3 mt-md-0" style="max-width: 28rem">
+                            A showcase of branding, editorial, and digital graphics crafted with precision and visual
+                            impact.
+                        </p>
+                    </div>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-4">
+                            <div
+                                class="work-card"
+                                onclick="openModal('Logo Design', 'Assets/graphic-design/logo-01.j', 'Brand identity and minimalist logomark concept for a modern tech startup, focusing on geometric harmony and scalability.')"
+                            >
+                                <div class="img-box mb-3">
+                                    <img alt="Logo design" src="./img/111.png" />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="cat">Logo Design</span><span class="small text-muted2">2024</span>
+                                </div>
+                                <h3 class="fs-5 fw-bold">Logo Design</h3>
+                                <p class="small text-muted2 clamp2 m-0">
+                                    Complete brand identity and minimalist logomark concept for a modern tech startup.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div
+                                class="work-card"
+                                onclick="openModal('Poster Design', 'Assets/graphic-design/poster-01.jpg', 'Vibrant typographical event poster created using Adobe Illustrator with high-contrast color theory and modern grid alignment.')"
+                            >
+                                <div class="img-box mb-3">
+                                    <img alt="Poster design" src="./img/11.png" />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="cat">Poster Design</span><span class="small text-muted2">2024</span>
+                                </div>
+                                <h3 class="fs-5 fw-bold">Typography Event Poster</h3>
+                                <p class="small text-muted2 clamp2 m-0">
+                                    Vibrant typographical event poster created using Adobe Illustrator.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div
+                                class="work-card"
+                                onclick="openModal('Social Media Design', 'Assets/graphic-design/social-01.jpg', 'Cohesive Instagram feed campaign template featuring engaging carousels and vibrant product highlights.')"
+                            >
+                                <div class="img-box mb-3">
+                                    <img alt="Social media design" src="./img/12.jpg" />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="cat">Social Media</span><span class="small text-muted2">2024</span>
+                                </div>
+                                <h3 class="fs-5 fw-bold">Instagram Post</h3>
+                                <p class="small text-muted2 clamp2 m-0">
+                                    Cohesive Instagram feed campaign template featuring engaging carousels.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div
+                                class="work-card"
+                                onclick="openModal('Packaging Design', 'Assets/graphic-design/packaging-01.jpg', 'Eco-friendly product box packaging design featuring clean typography, sustainable iconography, and matte finish aesthetics.')"
+                            >
+                                <div class="img-box mb-3">
+                                    <img alt="Packaging design" src="./img/mockup.png" />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="cat">Packaging</span><span class="small text-muted2">2023</span>
+                                </div>
+                                <h3 class="fs-5 fw-bold">Eco-Friendly Product Box</h3>
+                                <p class="small text-muted2 clamp2 m-0">
+                                    Sustainable product packaging design with clean typography and matte finish.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-lg-4">
+                            <div
+                                class="work-card"
+                                onclick="openModal('Mockup Design', 'Assets/graphic-design/mockup-01.jpg', 'High-end device mockup presentation showcasing responsive UI screens for mobile applications.')"
+                            >
+                                <div class="img-box mb-3">
+                                    <img alt="Mockup design" src="./img/ui.jpg" />
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="cat">Mockup Design</span><span class="small text-muted2">2023</span>
+                                </div>
+                                <h3 class="fs-5 fw-bold">Mobile App UI Presentation</h3>
+                                <p class="small text-muted2 clamp2 m-0">
+                                    High-end device mockup presentation showcasing responsive UI screens.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section container" id="web-development">
+                <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-between mb-5">
+                    <div>
+                        <div class="eyebrow text-tertiary2">Development</div>
+                        <h2 class="sec-title m-0">Web Experiences</h2>
+                    </div>
+                    <p class="text-muted2 small mt-3 mt-md-0" style="max-width: 28rem">
+                        Fully responsive website concepts and production interfaces built with clean code and modern
+                        architecture.
+                    </p>
+                </div>
+                <div class="row g-5">
+                    <div class="col-md-6">
+                        <div class="card-neo web-card h-100">
+                            <div class="img-box mb-4"><img alt="Arena KKG" src="./img/kkg.png" /></div>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tag-sm">HTML5</span><span class="tag-sm">CSS3</span
+                                ><span class="tag-sm">JavaScript</span><span class="tag-sm">Bootstrap</span>
+                            </div>
+                            <h3 class="fs-3 fw-bold">Arena KKG Website</h3>
+                            <p class="small text-muted2" style="line-height: 1.7">
+                                Modern animation and VFX institute website concept featuring immersive imagery, course
+                                syllabus breakdowns, and student showcase galleries.
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-2">
+                                <button
+                                    class="btn-main btn-md2"
+                                    onclick="openModal('Arena KKG Website', 'Assets/web-projects/arena.jpg', 'Modern animation and VFX institute website concept featuring immersive imagery, course syllabus breakdowns, and student showcase galleries.', ['HTML5', 'CSS3', 'JavaScript', 'Bootstrap'])"
+                                >
+                                    <span class="material-symbols-outlined" style="font-size: 16px">visibility</span>
+                                    View Details</button
+                                ><a class="btn-soft btn-md2" href="#"
+                                    ><span class="material-symbols-outlined" style="font-size: 16px">code</span>
+                                    GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-neo web-card h-100">
+                            <div class="img-box mb-4">
+                                <img alt="Landmark Towers" src="./img/hotel.png" />
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tag-sm">HTML5</span><span class="tag-sm">CSS3</span
+                                ><span class="tag-sm">JavaScript</span><span class="tag-sm">PHP</span>
+                            </div>
+                            <h3 class="fs-3 fw-bold">The Landmark Towers</h3>
+                            <p class="small text-muted2" style="line-height: 1.7">
+                                Modern hotel website interface featuring online room booking, interactive amenities
+                                slider, and seamless user experience.
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-2">
+                                <button
+                                    class="btn-main btn-md2"
+                                    onclick="openModal('The Landmark Towers', 'Assets/web-projects/hotel.jpg', 'Modern hotel website interface featuring online room booking, interactive amenities slider, and seamless user experience.', ['HTML5', 'CSS3', 'JavaScript', 'PHP'])"
+                                >
+                                    <span class="material-symbols-outlined" style="font-size: 16px">visibility</span>
+                                    View Details</button
+                                ><a class="btn-soft btn-md2" href="#"
+                                    ><span class="material-symbols-outlined" style="font-size: 16px">code</span>
+                                    GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-neo web-card h-100">
+                            <div class="img-box mb-4">
+                                <img alt="KGI Website" src="./img/kgi.png" />
+                            </div>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tag-sm">HTML5</span><span class="tag-sm">CSS3</span
+                                ><span class="tag-sm">Bootstrap</span><span class="tag-sm">MySQL</span>
+                            </div>
+                            <h3 class="fs-3 fw-bold">KGI Website Concept</h3>
+                            <p class="small text-muted2" style="line-height: 1.7">
+                                Professional educational website concept with course directories, faculty listings, and
+                                student inquiry portal backed by MySQL.
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-2">
+                                <button
+                                    class="btn-main btn-md2"
+                                    onclick="openModal('KGI Website Concept', 'Assets/web-projects/kgi.jpg', 'Professional educational website concept with course directories, faculty listings, and student inquiry portal backed by MySQL.', ['HTML5', 'CSS3', 'Bootstrap', 'MySQL'])"
+                                >
+                                    <span class="material-symbols-outlined" style="font-size: 16px">visibility</span>
+                                    View Details</button
+                                ><a class="btn-soft btn-md2" href="#"
+                                    ><span class="material-symbols-outlined" style="font-size: 16px">code</span>
+                                    GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-neo web-card h-100">
+                            <div class="img-box mb-4"><img alt="clinic" src="./img/clinic.png" /></div>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="tag-sm">HTML5</span><span class="tag-sm">CSS3</span
+                                ><span class="tag-sm">JavaScript</span><span class="tag-sm">PHP</span>
+                            </div>
+                            <h3 class="fs-3 fw-bold">Clinic</h3>
+                            <p class="small text-muted2" style="line-height: 1.7">
+                                Clinic website concept with Hospital catalog, interactive cart management, and
+                                streamlined checkout interface.
+                            </p>
+                            <div class="d-flex align-items-center gap-3 pt-2">
+                                <button
+                                    class="btn-main btn-md2"
+                                    onclick="openModal('Run Store E-Commerce', 'Assets/web-projects/run-store.jpg', 'E-commerce website concept with product catalog, interactive cart management, and streamlined checkout interface.', ['HTML5', 'CSS3', 'JavaScript', 'PHP'])"
+                                >
+                                    <span class="material-symbols-outlined" style="font-size: 16px">visibility</span>
+                                    View Details</button
+                                ><a class="btn-soft btn-md2" href="#"
+                                    ><span class="material-symbols-outlined" style="font-size: 16px">code</span>
+                                    GitHub</a
+                                >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bg-low" style="padding: 5rem 0">
+                <div class="container" style="max-width: 64rem">
+                    <div class="card-neo neo-xl text-center" style="padding: 3rem; box-shadow: var(--sh-xl)">
+                        <div class="cta-pill mb-4">
+                            <span class="material-symbols-outlined" style="font-size: 16px">description</span> Resume
+                            Available
+                        </div>
+                        <h2 class="sec-title">Let's Build Something Great</h2>
+                        <p class="text-muted2 mx-auto" style="max-width: 36rem">
+                            Looking for a dedicated fresher graphic designer and web developer to bring innovative ideas
+                            to life? Download my resume or get in touch.
+                        </p>
+                        <div class="d-flex flex-wrap justify-content-center gap-3 pt-3">
+                            <a
+                                class="btn-main btn-lg2"
+                                href="https://drive.google.com/file/d/1QzWp-F4fUboSKwvDZhHRQa-hgL21nGk9/view?usp=sharing"
+                                ><span class="material-symbols-outlined">download</span> Download Resume</a
+                            ><a class="btn-soft btn-lg2" href="mailto:rans08831@gmail.com"
+                                ><span class="material-symbols-outlined">mail</span> Contact Me</a
+                            >
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="section container" id="contact">
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <div class="eyebrow text-primary2">Get In Touch</div>
+                        <h2 class="sec-title">Let's Create Something Together</h2>
+                        <p class="text-muted2 mb-4" style="line-height: 1.7">
+                            Have a project in mind, a freelance opportunity, or just want to connect? Drop a message and
+                            I'll get back to you promptly.
+                        </p>
+                        <div class="info-box">
+                            <div class="info-icon bg-p20"><span class="material-symbols-outlined">mail</span></div>
+                            <div>
+                                <div class="stat-label fw-semibold">Email Us</div>
+                                <div class="small fw-bold">rans08831@gmail.com</div>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon bg-t20"><span class="material-symbols-outlined">call</span></div>
+                            <div>
+                                <div class="stat-label fw-semibold">Phone</div>
+                                <div class="small fw-bold">+91 9737096686</div>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon bg-p20">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <div class="stat-label fw-semibold">Location</div>
+                                <div class="small fw-bold">Lucknow, India</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="card-neo" id="contact-form" onsubmit="handleFormSubmit(event)">
+                            <input type="hidden" name="access_key" value="0c4b9973-6c26-4baa-ae6d-edc65ca38bc7" /><input
+                                type="hidden"
+                                name="subject"
+                                value="New Portfolio Contact Form Message"
+                            />
+                            <div class="row g-4 mb-4">
+                                <div class="col-sm-6">
+                                    <label class="form-label2" for="name">Your Name</label
+                                    ><input
+                                        class="field"
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="Your Name"
+                                        required
+                                    />
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="form-label2" for="email">Email Address</label
+                                    ><input
+                                        class="field"
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="your@email.com"
+                                        required
+                                    />
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label2" for="phone">Phone Number</label
+                                ><input
+                                    class="field"
+                                    id="phone"
+                                    name="phone"
+                                    type="tel"
+                                    placeholder="+91 98765 43210"
+                                />
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label2" for="message">Your Message</label
+                                ><textarea
+                                    class="field"
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    placeholder="Tell me about your project..."
+                                    required
+                                ></textarea>
+                            </div>
+                            <button class="btn-main btn-lg2 w-100 justify-content-center" type="submit" id="submit-btn">
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <div id="toast">
+            <div class="toast-icon"><span class="material-symbols-outlined">check</span></div>
+            <div>
+                <div class="fw-semibold small">Message Sent Successfully!</div>
+                <div class="stat-label" style="text-transform: none; letter-spacing: 0">
+                    Thank you for reaching out. I'll get back soon.
+                </div>
+            </div>
+        </div>
+        <div id="project-modal">
+            <div class="modal-box">
+                <button class="modal-close" onclick="closeModal()">
+                    <span class="material-symbols-outlined" style="font-size: 20px">close</span>
+                </button>
+                <div class="mb-3">
+                    <span class="cat text-uppercase" id="modal-category" style="letter-spacing: 0.05em">Category</span>
+                    <h3 class="fs-2 fw-bold mt-2" id="modal-title">Project Title</h3>
+                </div>
+                <div class="img-box mb-3" style="height: 16rem">
+                    <img
+                        id="modal-image"
+                        alt="Project preview"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhmIoopqwAG9bwwZ6Qg53OQS-vS8IzQV97x8d_T3ddcQBmvUyIg0b9zet9xzFUfgsp9-CHeGjvGtX5MDjlgQQCB_Vw5Sx8KSg3kvFIYDWwKo0p9eEYoLOb6iuRSfvDEnF-nuFMfARKkexcNkjIZKHBYkHJtHzPBkQ_5LhuYpOhNdZi2nFc62znfNDReqETVsLRvgNHm9g2UDqKJv-_Xr1Im35R_5soasAnozT29A2B4-Icu0pyW9ez"
+                    />
+                </div>
+                <div class="mb-3">
+                    <h4>Project Overview</h4>
+                    <p class="small text-muted2" style="line-height: 1.7" id="modal-description">
+                        Detailed project description goes here...
+                    </p>
+                </div>
+                <div class="mb-3" id="modal-tech-container">
+                    <h4>Technologies Used</h4>
+                    <div class="d-flex flex-wrap gap-2" id="modal-tech-list"></div>
+                </div>
+                <div class="d-flex align-items-center gap-3 pt-3">
+                    <a class="btn-main btn-md2" style="padding: 0.75rem 1.5rem" href="#"
+                        ><span class="material-symbols-outlined">open_in_new</span> Live Demo</a
+                    ><a class="btn-soft btn-md2" style="padding: 0.75rem 1.5rem" href="#"
+                        ><span class="material-symbols-outlined">code</span> GitHub Repository</a
+                    >
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container">
+                <div class="row g-5 mb-5">
+                    <div class="col-md-3">
+                        <div class="fs-5 fw-bold mb-3">Silk Studio</div>
+                        <p class="small text-muted2">
+                            Crafting high-end digital experiences and tactile interfaces with passion and precision.
+                        </p>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="foot-title">Navigation</div>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#web-development">Projects</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="foot-title">Services</div>
+                        <ul>
+                            <li><a href="#graphic-design">Graphic Design</a></li>
+                            <li><a href="#web-development">Web Development</a></li>
+                            <li><a href="#skills">Our Skills</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="foot-title">Connect</div>
+                        <ul>
+                            <li><a href="#contact">Contact Us</a></li>
+                            <li><a href="#">Twitter / X</a></li>
+                            <li><a href="#">LinkedIn</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="foot-bottom d-flex flex-column flex-sm-row align-items-center justify-content-between">
+                    <p class="m-0">© 2024 Silk Studio. All rights reserved.</p>
+                    <p class="m-0">Designed with Extruded Light philosophy.</p>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const menuToggle = document.querySelector(".menu-toggle");
+            const mobileNav = document.getElementById("mobileNav");
+            function closeMobileNav() {
+                if (!menuToggle || !mobileNav) return;
+                mobileNav.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Open navigation menu");
+                menuToggle.querySelector(".material-symbols-outlined").textContent = "menu";
+            }
+            menuToggle?.addEventListener("click", function () {
+                const isOpen = mobileNav.classList.toggle("open");
+                menuToggle.setAttribute("aria-expanded", String(isOpen));
+                menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+                menuToggle.querySelector(".material-symbols-outlined").textContent = isOpen ? "close" : "menu";
+            });
+            mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMobileNav));
+
+            function openModal(title, imageSrc, description, techStack = ["HTML5", "CSS3", "JavaScript"]) {
+                document.getElementById("modal-title").innerText = title;
+                document.getElementById("modal-description").innerText = description;
+                document.getElementById("modal-category").innerText = "Project Showcase";
+                document.getElementById("modal-image").src = imageSrc;
+                const techList = document.getElementById("modal-tech-list");
+                techList.innerHTML = "";
+                techStack.forEach(function (tech) {
+                    const badge = document.createElement("span");
+                    badge.className = "tag";
+                    badge.innerText = tech;
+                    techList.appendChild(badge);
+                });
+                document.getElementById("project-modal").classList.add("open");
+            }
+            function closeModal() {
+                document.getElementById("project-modal").classList.remove("open");
+            }
+            function handleFormSubmit(event) {
+                event.preventDefault();
+                const form = document.getElementById("contact-form");
+                const button = document.getElementById("submit-btn");
+                const formData = new FormData(form);
+                button.disabled = true;
+                button.innerHTML = "Sending...";
+                fetch("https://api.web3forms.com/submit", { method: "POST", body: formData })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        if (data.success) {
+                            form.reset();
+                            const toast = document.getElementById("toast");
+                            toast.classList.add("show");
+                            setTimeout(() => toast.classList.remove("show"), 4000);
+                        } else {
+                            alert(data.message || "Message could not be sent.");
+                        }
+                    })
+                    .catch((error) => {
+                        console.error(error);
+                        alert("Unable to send message. Please try again.");
+                    })
+                    .finally(() => {
+                        button.disabled = false;
+                        button.innerHTML = "Send Message";
+                    });
+            }
+        </script>
+    </body>
+</html>
+
